@@ -1,0 +1,212 @@
+#container {
+    margin: 70px auto;
+    height: 615px;
+    width: 700px;
+    border: 3px solid black;
+}
+
+h2 {
+    font-family: sans-serif;
+    margin: 20px;
+}
+
+#first_Line {
+    position: relative;
+    bottom: 35px;
+    opacity: 0.5;
+}
+
+.fa-times {
+    position: relative;
+    left: 650px;
+    top: -45px;
+    font-size: 25px;
+    color: red;
+    cursor: pointer;
+}
+
+#list_Container {
+    list-style-type: none;
+    position: relative;
+    bottom: 30px;
+    line-height: 30px;
+}
+
+#list_Container #First_Name {
+    font-weight: bolder;
+    font-size: 20px;
+    font-family: sans-serif;
+}
+
+#list_Container #fName {
+    position: relative;
+    top: -5px;
+    font-family: sans-serif;
+    height: 33px;
+    padding-left: 10px;
+    width: 90%;
+    border-radius: 5px;
+}
+
+#list_Container #Last_Name {
+    font-weight: bolder;
+    font-size: 20px;
+    font-family: sans-serif;
+    position: relative;
+    top: 8px;
+}
+
+#list_Container #lName {
+    position: relative;
+    top: 3px;
+    font-family: sans-serif;
+    height: 33px;
+    padding-left: 10px;
+    width: 90%;
+    border-radius: 5px;
+}
+
+#list_Container #Profile_strength {
+    font-weight: bolder;
+    font-size: 20px;
+    font-family: sans-serif;
+    position: relative;
+    top: 13px;
+}
+
+#list_Container #profile {
+    position: relative;
+    top: 7px;
+    font-family: sans-serif;
+    height: 33px;
+    padding-left: 10px;
+    width: 90%;
+    border-radius: 5px;
+}
+
+#list_Container #user_Name {
+    font-weight: bolder;
+    font-size: 20px;
+    font-family: sans-serif;
+    position: relative;
+    top: 15px;
+}
+
+#list_Container #uName {
+    position: relative;
+    top: 10px;
+    font-family: sans-serif;
+    height: 33px;
+    padding-left: 10px;
+    width: 90%;
+    border-radius: 5px;
+}
+
+#list_Container #email_Address {
+    font-weight: bolder;
+    font-size: 20px;
+    font-family: sans-serif;
+    position: relative;
+    top: 18px;
+}
+
+#list_Container #eMail {
+    position: relative;
+    top: 13px;
+    font-family: sans-serif;
+    height: 33px;
+    padding-left: 10px;
+    width: 90%;
+    border-radius: 5px;
+}
+
+#list_Container #Password {
+    font-weight: bolder;
+    font-size: 20px;
+    font-family: sans-serif;
+    position: relative;
+    top: 21px;
+}
+
+#list_Container #passWord {
+    position: relative;
+    top: 16px;
+    font-family: sans-serif;
+    height: 33px;
+    padding-left: 10px;
+    width: 90%;
+    border-radius: 5px;
+}
+
+#second_Line {
+    position: relative;
+    bottom: 8px;
+}
+
+#cancelBtn {
+    font-family: sans-serif;
+    height: 35px;
+    width: 80px;
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    padding: 5px;
+    border: 1px solid black;
+    font-size: 15px;
+    cursor: pointer;
+    position: relative;
+    left: 490px;
+}
+
+#cancelBtn:hover {
+    color: white;
+    background-color: red;
+    border: 1px solid red;
+}
+
+#addBtn {
+    font-family: sans-serif;
+    height: 35px;
+    width: 80px;
+    background-color: rgb(30, 206, 30);
+    color: white;
+    border-radius: 5px;
+    padding: 5px;
+    border: 1px solid rgb(30, 206, 30);
+    font-size: 15px;
+    cursor: pointer;
+    position: relative;
+    left: 510px;
+}
+
+#addBtn:hover {
+    color: white;
+    background-color: rgb(7, 153, 14);
+    cursor: pointer;
+}
+
+#displayingExistingUser {
+    display: grid;
+    margin: 10px auto;
+    border: 2px solid blue;
+    height: 500px;
+    width: 800px;
+    grid-template-columns: 200px 200px 200px 200px;
+    justify-content: space-evenly;
+    grid-gap: 50px 39px;
+}
+
+@media only screen and (max-width:700px) {
+    #container {
+        margin: 70px auto;
+        width: 100%;
+    }
+    #cancelBtn {
+        position: relative;
+        left: 40px;
+    }
+    #addBtn {
+        position: relative;
+        left: 50px;
+    }
+}

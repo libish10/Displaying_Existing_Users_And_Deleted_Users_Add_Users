@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title> Displaying Existing Users and Deleting the Users and Adding the Users </title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/d33d2ea69a.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="container">
+        <form name="myForm" method="POST" action="#" onsubmit="return Validate(this)">
+            <h2>Add User</h2>
+            <i class="fas fa-times"></i>
+            <hr id="first_Line">
+            <ul id="list_Container">
+                <li><label for="fName"><span id="First_Name">First Name</span</label></li>
+                <li><input type="text" id="fName" name="fName" placeholder="Enter your first name"></li>
+                <li><label for="lName"><span  id="Last_Name">Last Name</span></label></li>
+                <li><input type="text" id="lName" name="lName" placeholder="Enter your last name"></li>
+                <li><label for="profile"><span id="Profile_strength">Profiles</span></label></li>
+                <li><input list="Profiles" id="profile" name="profile" placeholder="Select">
+                    <datalist id="Profiles">
+                    <option value="Self Confidence"></option>
+                    <option  value="Enthusiastic"></option>
+                    <option value="Over thinking"></option>
+                    <option value="Multi-talented"></option>
+                </datalist>
+                </li>
+                <li><label for="uName"><span id="user_Name">Username</span></label></li>
+                <li><input type="text" id="uName" name="uName" placeholder="Enter username" </li>
+                    <li><label for="eMail"><span id="email_Address">Email Address</span></label></li>
+                    <li><input type="email" id="eMail" name="eMail" placeholder="Enter your email id"></li>
+                    <li><label for="passWord"><span id="Password">Password</span></label></li>
+                    <li><input type="password" id="passWord" name="passWord" placeholder="Enter password"></li>
+            </ul>
+            <hr id="second_Line">
+            <input type="reset" value="Cancel" id="cancelBtn">
+            <input type="submit" value="Add" id="addBtn"></form>
+    </div>
+
+    <div id="displayingExistingUser"></div>
+
+    <script src="./index.js"></script>
+</body>
+
+</html>
