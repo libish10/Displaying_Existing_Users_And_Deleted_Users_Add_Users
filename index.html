@@ -10,7 +10,7 @@
 
 <body>
     <div id="container">
-        <form name="myForm" method="POST" action="#" onsubmit="return Validate(this)">
+        <form name="myForm" method="POST" action="#" onsubmit="return false">
             <h2>Add User</h2>
             <i class="fas fa-times"></i>
             <hr id="first_Line">
@@ -37,7 +37,7 @@
             </ul>
             <hr id="second_Line">
             <input type="reset" value="Cancel" id="cancelBtn">
-            <input type="submit" value="Add" id="addBtn"></form>
+            <input type="submit" value="Add" id="addBtn"  onclick="AddUser()"></form>
     </div>
 
     <div id="displayingExistingUser"></div>
