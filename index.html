@@ -16,11 +16,11 @@
             <hr id="first_Line">
             <ul id="list_Container">
                 <li><label for="fName"><span id="First_Name">First Name</span</label></li>
-                <li><input type="text" id="fName" name="fName" placeholder="Enter your first name"></li>
+                <li><input type="text" id="fName" name="fName" placeholder="Enter your first name" required onchange="firstNameValidate()"></li>
                 <li><label for="lName"><span  id="Last_Name">Last Name</span></label></li>
-                <li><input type="text" id="lName" name="lName" placeholder="Enter your last name"></li>
+                <li><input type="text" id="lName" name="lName" placeholder="Enter your last name" required onchange="lastNameValidate()"></li>
                 <li><label for="profile"><span id="Profile_strength">Profiles</span></label></li>
-                <li><input list="Profiles" id="profile" name="profile" placeholder="Select">
+                <li><input list="Profiles" id="profile" name="profile" placeholder="Select" required>
                     <datalist id="Profiles">
                     <option value="Self Confidence"></option>
                     <option  value="Enthusiastic"></option>
@@ -29,19 +29,19 @@
                 </datalist>
                 </li>
                 <li><label for="uName"><span id="user_Name">Username</span></label></li>
-                <li><input type="text" id="uName" name="uName" placeholder="Enter username" </li>
-                    <li><label for="eMail"><span id="email_Address">Email Address</span></label></li>
-                    <li><input type="email" id="eMail" name="eMail" placeholder="Enter your email id"></li>
-                    <li><label for="passWord"><span id="Password">Password</span></label></li>
-                    <li><input type="password" id="passWord" name="passWord" placeholder="Enter password"></li>
+                <li><input type="text" id="uName" name="uName" placeholder="Enter username" required onchange="userNameValidate()"></li>
+                <li><label for="eMail"><span id="email_Address">Email Address</span></label></li>
+                <li><input type="email" id="eMail" name="eMail" placeholder="Enter your email id" required onchange="emailValidate()"></li>
+                <li><label for="passWord"><span id="Password">Password</span></label></li>
+                <li><input type="password" id="passWord" name="passWord" placeholder="Enter password" required onchange="passwordValidate()"></li>
             </ul>
             <hr id="second_Line">
             <input type="reset" value="Cancel" id="cancelBtn">
-            <input type="submit" value="Add" id="addBtn"  onclick="AddUser()"></form>
+            <input type="submit" value="Add" id="addBtn" onclick="AddUser()"></form>
     </div>
 
     <div id="displayingExistingUser"></div>
-
+    <script src="./validation.js"></script>
     <script src="./index.js"></script>
 </body>
 

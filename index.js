@@ -1,4 +1,3 @@
-
 DisplayUser()
 
 function DisplayUser() {
@@ -20,17 +19,48 @@ function DisplayUsersList(data) {
             let fname = user.first_name ? user.first_name : user.fist_name;
             let email = user.email;
             let lname = user.last_name;
-           
-            Result += `<div class='grid-item'><p  class="grid-items-name">${fname} ${lname}</p><i class="fas fa-pencil-alt"></i><i class="fas fa-trash-alt" onclick='RemoveUser("${user.email}")'></i></div>`
+            let pwd = user.pwd;
+            let username = user.username;
+            let id = user._id.$oid;
+            Result += `<div class='grid-item'><p  class="grid-items-name">${fname} ${lname}</p>
+            <i class="fas fa-pencil-alt" onclick='EditUser(("${email}"),("${fname}"),("${lname}"),("${pwd}"),("${username}"),("${id}"))'></i><i class="fas fa-trash-alt" onclick='RemoveUser("${user.email}")'></i></div>`
         })
         document.getElementById("displayingExistingUser").innerHTML = Result;
     }
 }
 
-function RemoveUser(emailId) {
+function EditUser(emailId, fName, lName, password, uName, id) {
     console.log(emailId);
-    let dataObj = { email: emailId };
+    console.log(fName);
+    console.log(lName);
+    console.log(password);
+    console.log(uName);
+    console.log(id)
+    let dataObj = {
+        email: `${emailId}`,
+        fist_name: `${fName}`,
+        last_name: `${lName}`,
+        pwd: `${password}`,
+        username: `${uName}`,
+
+
+    };
+    console.log(dataObj)
+    document.getElementById("fName").value = dataObj.fist_name;
+    document.getElementById("lName").value = dataObj.last_name;
+    document.getElementById("uName").value = dataObj.username;
+    document.getElementById("eMail").value = dataObj.email;
+    document.getElementById("passWord").value = dataObj.pwd;
+
+    DisplayUser();
+}
+
+function RemoveUser(emailId) {
+
+    let dataObj = { email: `"${emailId}"` };
+
     let url = "http://3.6.93.159:7883/machstatz/delete_existing_user";
+
     fetch(url, {
             method: "DELETE",
             body: JSON.stringify(dataObj),
@@ -49,34 +79,30 @@ function RemoveUser(emailId) {
 
 
 function AddUser() {
-          let   fname=`"${document.getElementById("fName").value}"`;
-          let   lname=`"${document.getElementById("lName").value}"`;
-          let   Uname=`"${document.getElementById("uName").value}"`;
-          let   emailId=`"${document.getElementById("eMail").value}"`;
-          let   password=`"${document.getElementById("passWord").value}"`;
-          console.log(fname);
-          console.log(lname);
-          console.log(Uname);
-          console.log(emailId);
-          console.log(passWord);
-          let headers=new Headers();
-              headers.append('Access-Control-Allow-Origin', "http://3.6.93.159:7883/machstatz/add_new_user");
-               headers.append('Access-Control-Allow-Credentials', 'true');
-          let url="http://3.6.93.159:7883/machstatz/add_new_user";
-          fetch(url,{
-              method:"POST",
-              body: JSON.stringify({
-                    email:  emailId,
-                    fist_name: fname,
-                    last_name: lname,
-                    pwd: passWord,
-                    username: Uname,
-                }),
-               
-          })
-           .then((response) => response.json())
-            .then((json) => console.log(json))
-            .catch((message)=>console.log("message : ",message));
-
+    let fname = document.getElementById("fName").value;
+    let lname = document.getElementById("lName").value;
+    let Uname = document.getElementById("uName").value;
+    let email = document.getElementById("eMail").value;
+    let password = document.getElementById("passWord").value;
+    let url = "http://3.6.93.159:7883/machstatz/add_new_user";
+    fetch(url, {
+            method: "POST",
+            body: JSON.stringify({
+                email: `${ email}`,
+                fist_name: `${fname}`,
+                last_name: `${lname}`,
+                pwd: `${password}`,
+                username: `${Uname}`,
+            }),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+            },
+        })
+        .then((response) => response.json())
+        .then((json) => console.log(json));
+    DisplayUser();
     return false;
+
+
+
 }

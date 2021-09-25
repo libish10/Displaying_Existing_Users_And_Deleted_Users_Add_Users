@@ -188,17 +188,24 @@ h2 {
 #displayingExistingUser {
     display: grid;
     margin: 10px auto;
-    height: 500px;
-    width: 800px;
+    min-height: auto;
+    max-width: 1200px;
+    background-color: rgba(236, 236, 236, 0.5);
     grid-template-columns: 250px 250px 250px;
     justify-content: space-evenly;
-    grid-gap: 50px 39px;
+    grid-gap: 50px 59px;
 }
 
 .grid-item {
-    border: 1px solid springgreen;
+    margin: 10px;
+    background-color: rgb(253, 253, 253);
+    box-shadow: 4px 5px 4px rgb(202, 199, 199), 7px 5px 4px rgb(202, 199, 199), 12px 5px 4px rgb(202, 199, 199), 2px 5px 14px rgb(202, 199, 199);
     height: 150px;
-    width: 250px;
+    width: 300px;
+}
+
+.grid-item:hover {
+    background-color: rgb(147, 216, 243);
 }
 
 .grid-items-name {
@@ -212,7 +219,7 @@ h2 {
     color: rgb(11, 158, 226);
     position: relative;
     bottom: 40px;
-    left: 150px;
+    left: 250px;
     cursor: pointer;
 }
 
@@ -220,7 +227,7 @@ h2 {
     color: red;
     position: relative;
     bottom: 40px;
-    left: 160px;
+    left: 260px;
     cursor: pointer;
 }
 
