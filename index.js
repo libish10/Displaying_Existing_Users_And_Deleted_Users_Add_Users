@@ -59,8 +59,8 @@ function RemoveUser(emailId) {
 
     let dataObj = { email: `"${emailId}"` };
 
-    let url = "http://3.6.93.159:7883/machstatz/delete_existing_user";
-
+    let url = `http://3.6.93.159:7883/machstatz/delete_existing_user`;
+    console.log(url)
     fetch(url, {
             method: "DELETE",
             body: JSON.stringify(dataObj),
