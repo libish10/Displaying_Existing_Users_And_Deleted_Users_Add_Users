@@ -1,4 +1,3 @@
-DisplayUser()
 
 function DisplayUser() {
     let url = "http://3.6.93.159:7883/machstatz/get_all_users";
@@ -8,21 +7,20 @@ function DisplayUser() {
         .then((json) => DisplayUsersList(json))
         .catch((err) => console.log("error", err));
 
-    return false;
 }
 
 function DisplayUsersList(data) {
     console.log(data)
     if (data) {
         var Result = "";
-        data.map((user) => {
+        data.map((user, index) => {
             let fname = user.first_name ? user.first_name : user.fist_name;
             let email = user.email;
             let lname = user.last_name;
             let pwd = user.pwd;
             let username = user.username;
             let id = user._id.$oid;
-            Result += `<div class='grid-item'><p  class="grid-items-name">${fname} ${lname}</p>
+            Result += `<div class='grid-item'><p class="grid-items-name">${fname} ${lname}</p>
             <i class="fas fa-pencil-alt" onclick='EditUser(("${email}"),("${fname}"),("${lname}"),("${pwd}"),("${username}"),("${id}"))'></i><i class="fas fa-trash-alt" onclick='RemoveUser("${user.email}")'></i></div>`
         })
         document.getElementById("displayingExistingUser").innerHTML = Result;
@@ -57,16 +55,17 @@ function EditUser(emailId, fName, lName, password, uName, id) {
 
 function RemoveUser(emailId) {
 
-    let dataObj = { email: `"${emailId}"` };
+    let dataObj = { email: `${emailId}` };
 
-    let url = `http://3.6.93.159:7883/machstatz/delete_existing_user`;
+    let url = "http://3.6.93.159:7883/machstatz/delete_existing_user";
     console.log(url)
     fetch(url, {
             method: "DELETE",
-            body: JSON.stringify(dataObj),
+            body: JSON.stringify(dataObj.email),
+            mode: "cors",
             headers: {
                 "Content-type": "application/json; charset=UTF-8"
-            }
+            },
         })
         .then(response => response.json())
         .then(json => console.log(json))
@@ -98,10 +97,11 @@ function AddUser() {
                 'Content-type': 'application/json; charset=UTF-8',
             },
         })
+       
         .then((response) => response.json())
         .then((json) => console.log(json));
-    DisplayUser();
-    return false;
+    
+      DisplayUser() 
 
 
 

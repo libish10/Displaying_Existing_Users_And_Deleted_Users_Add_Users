@@ -1,6 +1,6 @@
             #container {
                 margin: 70px auto;
-                height: 615px;
+                height: 625px;
                 width: 700px;
                 border: 3px solid black;
             }
@@ -278,7 +278,7 @@
                 #displayingExistingUser {
                     display: grid;
                     margin: 10px auto;
-                    min-height: auto;
+                    height: auto;
                     max-width: auto;
                     background-color: rgba(236, 236, 236, 0.5);
                     grid-template-columns: 250px;
