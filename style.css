@@ -185,9 +185,35 @@
                 cursor: pointer;
             }
             
+            #addUser {
+                cursor: pointer;
+                height: 50px;
+                width: 150px;
+                color: white;
+                font-size: 20px;
+                background-color: rgb(16, 128, 202);
+                border-radius: 7px;
+                position: relative;
+                left: 1200px;
+                top: 30px;
+                border: 2px solid rgb(14, 50, 211);
+            }
+            
+            #addUser:active {
+                transform: translateY(4px);
+            }
+            
+            #anchorAdd:link,
+            #anchorAdd:visited,
+            #anchorAdd:hover,
+            #anchorAdd:active {
+                color: white;
+                text-decoration: none;
+            }
+            
             #displayingExistingUser {
                 display: grid;
-                margin: 10px auto;
+                margin: 50px auto;
                 min-height: auto;
                 max-width: 1200px;
                 background-color: rgba(236, 236, 236, 0.5);
@@ -213,6 +239,7 @@
                 text-align: center;
                 position: relative;
                 top: 60px;
+                height: 25px;
             }
             
             .fa-pencil-alt {
@@ -252,12 +279,16 @@
                     color: red;
                     cursor: pointer;
                 }
+                #addUser {
+                    position: relative;
+                    left: 20px;
+                }
             }
             
-            @media only screen and (min-width:900px) and (max-width:1200px) {
+            @media only screen and (min-width:900px) and (max-width:1250px) {
                 #displayingExistingUser {
                     display: grid;
-                    margin: 10px auto;
+                    margin: 50px auto;
                     min-height: auto;
                     max-width: auto;
                     background-color: rgba(236, 236, 236, 0.5);
@@ -272,17 +303,25 @@
                     height: 150px;
                     width: 300px;
                 }
+                #addUser {
+                    position: relative;
+                    left: 20px;
+                }
             }
             
             @media only screen and (min-width:0px) and (max-width:900px) {
                 #displayingExistingUser {
                     display: grid;
-                    margin: 10px auto;
+                    margin: 50px auto;
                     height: auto;
                     max-width: auto;
                     background-color: rgba(236, 236, 236, 0.5);
                     grid-template-columns: 250px;
                     justify-content: space-evenly;
                     grid-gap: 50px 59px;
+                }
+                #addUser {
+                    position: relative;
+                    left: 20px;
                 }
             }
