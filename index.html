@@ -7,16 +7,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
     <title>Displaying The Users</title>
+    <script src="./jquery-3.6.0.min.js"></script>
     <script src="https://kit.fontawesome.com/d33d2ea69a.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <div id="error">
         <p id="error_display_message"></p>
+        <i class="far fa-window-close"></i>
     </div>
     <a href="./addUser.html" id="anchorAdd"> <button id="addUser">Add User</button></a>
     <div id="displayingExistingUser"></div>
     <script src="./index.js"></script>
+    <script>
+        $(document).ready(function() {
+            $(".fa-window-close").click(function() {
+                $("#error").toggle();
+            });
+        })
+    </script>
 </body>
 
 </html>

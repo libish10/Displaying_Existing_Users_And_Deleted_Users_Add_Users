@@ -45,16 +45,21 @@ function EditUser(emailId, fName, lName, password, uName, id) {
 
     };
     console.log(dataObj)
-    document.getElementById("fName").value = dataObj.fist_name;
-    document.getElementById("lName").value = dataObj.last_name;
-    document.getElementById("uName").value = dataObj.username;
-    document.getElementById("eMail").value = dataObj.email;
-    document.getElementById("passWord").value = dataObj.pwd;
+    localStorage.setItem("firstName", dataObj.fist_name);
+    localStorage.setItem("lastName", dataObj.last_name);
+    localStorage.setItem("userName", dataObj.username)
+    localStorage.setItem("email", dataObj.email)
+    localStorage.setItem("password", dataObj.pwd);
+    window.location.href = "./addUser.html";
 
-    DisplayUser();
+
+
 }
 
+
 function RemoveUser(emailId) {
+    var errorDisplay = document.getElementById("error_display_message")
+    errorDisplay.scrollIntoView(true);
 
     let dataObj = { email: `${emailId}` };
 
@@ -71,7 +76,7 @@ function RemoveUser(emailId) {
         .then(response => response.json())
 
     .then(json =>
-            document.getElementById("error_display_message").innerHTML = JSON.stringify(json),
+            errorDisplay.innerHTML = JSON.stringify(json),
             document.getElementById("error").style.display = "block", )
         .then(json => console.log(json))
 
