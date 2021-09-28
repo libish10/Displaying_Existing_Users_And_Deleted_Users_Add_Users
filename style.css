@@ -258,6 +258,24 @@
                 cursor: pointer;
             }
             
+            #error {
+                height: 50px;
+                width: 800px;
+                position: relative;
+                top: 80px;
+                left: 300px;
+                color: red;
+                border: 2px solid red;
+                background-color: rgb(245, 215, 215);
+                padding: 5px 10px;
+                display: none;
+            }
+            
+            #error_display_message {
+                position: relative;
+                left: 200px;
+            }
+            
             @media only screen and (max-width:700px) {
                 #container {
                     margin: 70px auto;
@@ -307,6 +325,16 @@
                     position: relative;
                     left: 20px;
                 }
+                #error {
+                    position: relative;
+                    left: 200px;
+                    width: 300px;
+                    height: 100px;
+                }
+                #error_display_message {
+                    position: relative;
+                    left: 0;
+                }
             }
             
             @media only screen and (min-width:0px) and (max-width:900px) {
@@ -323,5 +351,15 @@
                 #addUser {
                     position: relative;
                     left: 20px;
+                }
+                #error {
+                    position: relative;
+                    left: 200px;
+                    width: 300px;
+                    height: 100px;
+                }
+                #error_display_message {
+                    position: relative;
+                    left: 0;
                 }
             }

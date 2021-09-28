@@ -69,8 +69,13 @@ function RemoveUser(emailId) {
             },
         })
         .then(response => response.json())
+
+    .then(json =>
+            document.getElementById("error_display_message").innerHTML = JSON.stringify(json),
+            document.getElementById("error").style.display = "block", )
         .then(json => console.log(json))
-        .catch(err => console.log("Error : ", err));
+
+    .catch(err => console.log("Error : ", err));
 
 
 
