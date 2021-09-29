@@ -258,7 +258,8 @@
                 cursor: pointer;
             }
             
-            #error {
+            #error,
+            #editError {
                 height: 50px;
                 width: 800px;
                 position: relative;
@@ -271,7 +272,8 @@
                 display: none;
             }
             
-            #error_display_message {
+            #error_display_message,
+            #edit_error_display_message {
                 position: relative;
                 left: 200px;
             }

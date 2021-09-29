@@ -45,14 +45,16 @@ function EditUser(emailId, fName, lName, password, uName, id) {
 
     };
     console.log(dataObj)
-    sessionStorage.setItem("firstName", dataObj.fist_name);
-    sessionStorage.setItem("lastName", dataObj.last_name);
-    sessionStorage.setItem("userName", dataObj.username)
-    sessionStorage.setItem("email", dataObj.email)
-    sessionStorage.setItem("password", dataObj.pwd);
-    window.location.href = "./addUser.html";
+        // sessionStorage.setItem("firstName", dataObj.fist_name);
+        // sessionStorage.setItem("lastName", dataObj.last_name);
+        // sessionStorage.setItem("userName", dataObj.username)
+        // sessionStorage.setItem("email", dataObj.email)
+        // sessionStorage.setItem("password", dataObj.pwd);
 
-
+    var errorDisplay = document.getElementById("error_display_message");
+    errorDisplay.scrollIntoView();
+    errorDisplay.innerHTML = "You cant edit the values through API fault";
+    document.getElementById("error").style.display = "block"
 
 }
 
