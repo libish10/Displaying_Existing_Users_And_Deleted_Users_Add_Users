@@ -49,11 +49,11 @@
         })
     </script>
     <script>
-        document.getElementById("fName").innerHTML = localStorage.getItem("firstName");
-        document.getElementById("lName").innerHTML = localStorage.getItem("lastName")
-        document.getElementById("uName").innerHTML = localStorage.getItem("userName");
-        document.getElementById("eMail").innerHTML = localStorage.getItem("email");
-        document.getElementById("passWord").innerHTML = localStorage.getItem("password")
+        document.getElementById("fName").value = sessionStorage.getItem("firstName");
+        document.getElementById("lName").value = sessionStorage.getItem("lastName")
+        document.getElementById("uName").value = sessionStorage.getItem("userName");
+        document.getElementById("eMail").value = sessionStorage.getItem("email");
+        document.getElementById("passWord").value = sessionStorage.getItem("password");
     </script>
 
     <script src="./validation.js"></script>

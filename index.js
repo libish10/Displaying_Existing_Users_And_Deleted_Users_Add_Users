@@ -45,11 +45,11 @@ function EditUser(emailId, fName, lName, password, uName, id) {
 
     };
     console.log(dataObj)
-    localStorage.setItem("firstName", dataObj.fist_name);
-    localStorage.setItem("lastName", dataObj.last_name);
-    localStorage.setItem("userName", dataObj.username)
-    localStorage.setItem("email", dataObj.email)
-    localStorage.setItem("password", dataObj.pwd);
+    sessionStorage.setItem("firstName", dataObj.fist_name);
+    sessionStorage.setItem("lastName", dataObj.last_name);
+    sessionStorage.setItem("userName", dataObj.username)
+    sessionStorage.setItem("email", dataObj.email)
+    sessionStorage.setItem("password", dataObj.pwd);
     window.location.href = "./addUser.html";
 
 
@@ -58,8 +58,8 @@ function EditUser(emailId, fName, lName, password, uName, id) {
 
 
 function RemoveUser(emailId) {
-    var errorDisplay = document.getElementById("error_display_message")
-    errorDisplay.scrollIntoView(true);
+    var errorDisplay = document.getElementById("error_display_message");
+    errorDisplay.scrollIntoView();
 
     let dataObj = { email: `${emailId}` };
 
